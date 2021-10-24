@@ -1,6 +1,7 @@
 package com.developer.johhns.arquitecturaandroidmvvm;
 
 import android.app.Application;
+import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
@@ -12,8 +13,8 @@ public class NotaRepositorio {
     private NotaDAO notaDAO ;
     private LiveData<List<Nota>> todasLasNotas ;
 
-    public NotaRepositorio(Application aplicacion){
-        NotaDB db = NotaDB.getInstancia(aplicacion) ;
+    public NotaRepositorio(Context contexto){
+        NotaDB db = NotaDB.getInstancia( contexto.getApplicationContext() ) ;
         notaDAO   = db.notaDAO();
         todasLasNotas = notaDAO.obtenerTodasLasNotas();
     }

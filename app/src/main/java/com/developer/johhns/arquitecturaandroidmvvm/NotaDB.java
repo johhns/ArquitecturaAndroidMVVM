@@ -15,12 +15,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 public abstract class NotaDB extends RoomDatabase {
 
     private static NotaDB instancia ;
-
     public abstract NotaDAO notaDAO() ;
 
     public static synchronized NotaDB getInstancia(Context contexto){
         if ( instancia == null ) {
-           instancia = Room.databaseBuilder( contexto.getApplicationContext() , NotaDB.class , "notas_db" )
+           instancia = Room.databaseBuilder(contexto , NotaDB.class , "notas_db" )
                            .fallbackToDestructiveMigration()
                            .addCallback(roomCallbac)
                            .build();

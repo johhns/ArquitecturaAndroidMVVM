@@ -2,15 +2,12 @@ package com.developer.johhns.arquitecturaandroidmvvm;
 
 import android.os.Bundle;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,8 +27,7 @@ public class MainActivity extends AppCompatActivity {
         NotaAdaptador adaptador = new NotaAdaptador() ;
 
         recView.setAdapter( adaptador );
-
-        notaViewModel = ViewModelProviders.of(this).get(NotaViewModel.class);
+        notaViewModel = new ViewModelProvider(this ).get(NotaViewModel.class) ;
         notaViewModel.obtenerTodasLasNotas().observe( this , new Observer<List<Nota>>() {
             @Override
             public void onChanged(List<Nota> notas) {
