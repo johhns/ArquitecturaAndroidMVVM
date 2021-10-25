@@ -53,6 +53,18 @@ public abstract class NotaDB extends RoomDatabase {
             notaDAO.insertar( new Nota( "Anotacion 7", "Texto de la nota 7", 4 ) );
             notaDAO.insertar( new Nota( "Anotacion 8", "Texto de la nota 8",  5) );
             notaDAO.insertar( new Nota( "Anotacion 9", "Texto de la nota 9", 5 ) );
+            notaDAO.insertar( new Nota( "Anotacion 10", "Texto de la nota 10", 5 ) );
+            notaDAO.insertar( new Nota( "Anotacion 11", "Texto de la nota 11", 5 ) );
+            notaDAO.insertar( new Nota( "Anotacion 12", "Texto de la nota 12", 6 ) );
+            notaDAO.insertar( new Nota( "Anotacion 13", "Texto de la nota 12", 6 ) );
+            notaDAO.insertar( new Nota( "Anotacion 14", "Texto de la nota 14", 7 ) );
+            notaDAO.insertar( new Nota( "Anotacion 15", "Texto de la nota 15", 7 ) );
+            notaDAO.insertar( new Nota( "Anotacion 16", "Texto de la nota 16", 7 ) );
+            notaDAO.insertar( new Nota( "Anotacion 17", "Texto de la nota 17", 7 ) );
+            notaDAO.insertar( new Nota( "Anotacion 18", "Texto de la nota 18", 8 ) );
+            notaDAO.insertar( new Nota( "Anotacion 19", "Texto de la nota 19", 8 ) );
+            notaDAO.insertar( new Nota( "Anotacion 20", "Texto de la nota 20", 9 ) );
+            notaDAO.insertar( new Nota( "Anotacion 21", "Texto de la nota 21", 9 ) );
             return null ;
         }
 

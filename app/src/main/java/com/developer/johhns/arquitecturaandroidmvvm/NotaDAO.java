@@ -24,7 +24,7 @@ public interface NotaDAO {
     @Query("Delete From notas")
     void eliminarTodasLasNotas();
 
-    @Query("Select * From notas Order By titulo ")
+    @Query("Select * From notas Order By id ")
     LiveData<List<Nota>>  obtenerTodasLasNotas() ;
 
 }
