@@ -1,25 +1,24 @@
 package com.developer.johhns.arquitecturaandroidmvvm;
 
-import android.content.AsyncQueryHandler;
+
+import android.app.Application;
 import android.content.Context;
 import android.os.AsyncTask;
-
 import androidx.annotation.NonNull;
-import androidx.loader.content.AsyncTaskLoader;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-@Database(entities = {Nota.class} , version = 1)
+@Database(entities = {Nota.class} , version = 1 , exportSchema = false)
 public abstract class NotaDB extends RoomDatabase {
 
     private static NotaDB instancia ;
     public abstract NotaDAO notaDAO() ;
 
-    public static synchronized NotaDB getInstancia(Context contexto){
+    public static synchronized NotaDB getInstancia( Context contexto ){
         if ( instancia == null ) {
-           instancia = Room.databaseBuilder(contexto , NotaDB.class , "notas_db" )
+           instancia = Room.databaseBuilder(contexto.getApplicationContext() , NotaDB.class , "notas_db" )
                            .fallbackToDestructiveMigration()
                            .addCallback(roomCallbac)
                            .build();

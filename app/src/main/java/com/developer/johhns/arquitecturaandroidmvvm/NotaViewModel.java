@@ -15,11 +15,11 @@ public class NotaViewModel extends ViewModel {
 
     private NotaRepositorio repositorio;
     private LiveData<List<Nota>> todasLasNotas;
-    Aplicacion aplicacion = new Aplicacion() ;
+
 
     public NotaViewModel() {
         super();
-        this.repositorio = new NotaRepositorio( aplicacion );
+        this.repositorio = new NotaRepositorio( Aplicacion.contextoAplicacion() );
         this.todasLasNotas = repositorio.obtenerTodasLasNotas();
     }
 

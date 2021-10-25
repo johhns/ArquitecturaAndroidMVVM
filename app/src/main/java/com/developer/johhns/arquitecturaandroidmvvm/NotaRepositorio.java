@@ -15,6 +15,7 @@ public class NotaRepositorio {
 
     public NotaRepositorio(Context contexto){
         NotaDB db = NotaDB.getInstancia( contexto.getApplicationContext() ) ;
+
         notaDAO   = db.notaDAO();
         todasLasNotas = notaDAO.obtenerTodasLasNotas();
     }

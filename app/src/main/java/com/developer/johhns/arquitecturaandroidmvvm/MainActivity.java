@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         NotaAdaptador adaptador = new NotaAdaptador() ;
 
         recView.setAdapter( adaptador );
+
         notaViewModel = new ViewModelProvider(this ).get(NotaViewModel.class) ;
         notaViewModel.obtenerTodasLasNotas().observe( this , new Observer<List<Nota>>() {
             @Override
